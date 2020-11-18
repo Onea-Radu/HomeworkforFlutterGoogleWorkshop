@@ -28,7 +28,6 @@ class _HomePageState extends State<HomePage> {
   String error = null;
 
   @override
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
@@ -78,7 +77,7 @@ class _HomePageState extends State<HomePage> {
                 )),
             if (number != null)
               Text(
-                '${(number * 4.5).toStringAsFixed(2)}',
+                '${(number * 4.5).toStringAsFixed(2) + " RON"}',
                 style: TextStyle(fontSize: 50, color: Colors.black54),
               )
           ],
