@@ -1,5 +1,5 @@
-import 'teme/1.dart' as App;
-void main()
-{
+import 'curs/2/1.dart' as App;
+
+void main() {
   App.main();
 }
