@@ -74,6 +74,7 @@ class _HomePageState extends State<HomePage> {
               return GestureDetector(
                 child: Card(
                   elevation: 10,
+                  color: Colors.blue,
                   child: Align(
                     child: Text('${_Props[index]}'),
                   ),
