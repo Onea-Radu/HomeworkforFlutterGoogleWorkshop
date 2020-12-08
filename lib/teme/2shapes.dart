@@ -67,8 +67,7 @@ class _HomePageState extends State<HomePage> {
 
             showDialog(
                 context: context,
-                builder: (_) =>
-                    AlertDialog(
+                builder: (_) => AlertDialog(
                       title: Text('$_text'),
                       content: Text(_txt),
                     ));

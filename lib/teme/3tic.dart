@@ -126,9 +126,7 @@ class _HomePageState extends State<HomePage> {
       return true;
     }
 
-    return _squares
-        .where((element) => element == Colors.white)
-        .isEmpty;
+    return _squares.where((element) => element == Colors.white).isEmpty;
   }
 
   void changeCol(int ind) {
@@ -156,15 +154,14 @@ class _HomePageState extends State<HomePage> {
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 3,
             ),
-            itemBuilder: (context, index) =>
-                GestureDetector(
-                  onTap: () {
-                    changeCol(index);
-                  },
-                  child: AnimatedButton(
-                    widgetColor: _squares[index],
-                  ),
-                ),
+            itemBuilder: (context, index) => GestureDetector(
+              onTap: () {
+                changeCol(index);
+              },
+              child: AnimatedButton(
+                widgetColor: _squares[index],
+              ),
+            ),
           ),
           if (_disabled)
             RaisedButton(
