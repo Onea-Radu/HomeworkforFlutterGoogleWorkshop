@@ -6,9 +6,9 @@ void main() {
 }
 
 class AnimatedButton extends StatelessWidget {
-  final Color widgetColor;
+  const AnimatedButton({this.widgetColor});
 
-  AnimatedButton({this.widgetColor});
+  final Color widgetColor;
 
   @override
   Widget build(BuildContext context) {
@@ -60,8 +60,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   bool checkWin() {
-    var t;
-    t = {
+    Set<Color> t = {
       ...[_squares[0], _squares[1], _squares[2], _current]
     };
     if (t.length == 1) {

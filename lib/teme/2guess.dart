@@ -25,7 +25,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  var _controller = TextEditingController();
+  final _controller = TextEditingController();
   String _text;
   String _error;
   int _lastNumber;

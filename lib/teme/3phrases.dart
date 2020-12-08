@@ -23,7 +23,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final List<String> _Props = <String>[
+  final List<String> _props = <String>[
     'salut',
     'salut(Germană)',
     'mă numesc',
@@ -33,7 +33,7 @@ class _HomePageState extends State<HomePage> {
     'sunt bine',
     'sunt bine(Germană)',
   ];
-  final List<String> _PropsGER = <String>[
+  final List<String> _propsGER = <String>[
     'Hallo',
     'mein Name ist',
     'wie gehts',
@@ -46,12 +46,12 @@ class _HomePageState extends State<HomePage> {
       if (id % 2 == 0)
         await assetsAudioPlayer.open(
           Audio.network(
-              'https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&q=${_Props[id]}&tl=ro'),
+              'https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&q=${_props[id]}&tl=ro'),
         );
       else {
         await assetsAudioPlayer.open(
           Audio.network(
-              'https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&q=${_PropsGER[id ~/ 2]}&tl=de'),
+              'https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&q=${_propsGER[id ~/ 2]}&tl=de'),
         );
       }
       // ignore: empty_catches
@@ -64,7 +64,7 @@ class _HomePageState extends State<HomePage> {
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: GridView.builder(
-            itemCount: _Props.length,
+            itemCount: _props.length,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
               crossAxisSpacing: 5.0,
@@ -76,7 +76,7 @@ class _HomePageState extends State<HomePage> {
                   elevation: 10,
                   color: Colors.blue,
                   child: Align(
-                    child: Text('${_Props[index]}'),
+                    child: Text('${_props[index]}'),
                   ),
                 ),
                 onTap: () {
