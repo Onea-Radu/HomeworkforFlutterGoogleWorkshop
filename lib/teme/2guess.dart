@@ -108,8 +108,7 @@ class _HomePageState extends State<HomePage> {
                           if (int.parse(_text) == _randomNumber) {
                             showDialog(
                                 context: context,
-                                builder: (_) =>
-                                    AlertDialog(
+                                builder: (_) => AlertDialog(
                                       title: Text('You were right.'),
                                       content: Text('It was $_randomNumber.'),
                                     )).then((_) {

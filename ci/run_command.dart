@@ -20,10 +20,10 @@ final String redLine = '$red━━━━━━━━━━━━━━━━━�
 
 bool fileFilter(String it) =>
     it.endsWith('.dart') &&
-        it != '.dart_tool/build/entrypoint/build.dart' &&
-        !it.endsWith('.g.dart') &&
-        !it.endsWith('.test_coverage.dart') &&
-        !it.endsWith('i18n.dart');
+    it != '.dart_tool/build/entrypoint/build.dart' &&
+    !it.endsWith('.g.dart') &&
+    !it.endsWith('.test_coverage.dart') &&
+    !it.endsWith('i18n.dart');
 
 String get clock {
   final DateTime now = DateTime.now();
@@ -49,22 +49,22 @@ void printProgress(String action, String workingDir, String command) {
   print('$clock $action: cd $cyan$workingDir$reset; $green$command$reset');
 }
 
-Stream<String> runAndGetStdout(String executable,
-    List<String> arguments, {
-      String workingDirectory,
-      Map<String, String> environment,
-      bool expectNonZeroExit = false,
-      int expectedExitCode,
-      String failureMessage,
-      Function beforeExit,
-    }) async* {
+Stream<String> runAndGetStdout(
+  String executable,
+  List<String> arguments, {
+  String workingDirectory,
+  Map<String, String> environment,
+  bool expectNonZeroExit = false,
+  int expectedExitCode,
+  String failureMessage,
+  Function beforeExit,
+}) async* {
   final String commandDescription = '${path.relative(executable, from: workingDirectory)} ${arguments.join(' ')}';
   final String relativeWorkingDir = path.relative(workingDirectory);
 
   printProgress('RUNNING', relativeWorkingDir, commandDescription);
 
-  final Stopwatch time = Stopwatch()
-    ..start();
+  final Stopwatch time = Stopwatch()..start();
   final Process process = await Process.start(
     executable,
     arguments,
@@ -94,21 +94,22 @@ Stream<String> runAndGetStdout(String executable,
   }
 }
 
-Future<void> runCommand(String executable,
-    List<String> arguments, {
-      String workingDirectory,
-      Map<String, String> environment,
-      bool expectNonZeroExit = false,
-      int expectedExitCode,
-      String failureMessage,
-      OutputMode outputMode = OutputMode.print,
-      CapturedOutput output,
-      bool skip = false,
-      bool Function(String) removeLine,
-    }) async {
+Future<void> runCommand(
+  String executable,
+  List<String> arguments, {
+  String workingDirectory,
+  Map<String, String> environment,
+  bool expectNonZeroExit = false,
+  int expectedExitCode,
+  String failureMessage,
+  OutputMode outputMode = OutputMode.print,
+  CapturedOutput output,
+  bool skip = false,
+  bool Function(String) removeLine,
+}) async {
   assert(
-  (outputMode == OutputMode.capture) == (output != null),
-  'The output parameter must be non-null with and only with '
+      (outputMode == OutputMode.capture) == (output != null),
+      'The output parameter must be non-null with and only with '
       'OutputMode.capture');
 
   final String commandDescription = '${path.relative(executable, from: workingDirectory)} ${arguments.join(' ')}';
@@ -119,8 +120,7 @@ Future<void> runCommand(String executable,
   }
   printProgress('RUNNING', relativeWorkingDir, commandDescription);
 
-  final Stopwatch time = Stopwatch()
-    ..start();
+  final Stopwatch time = Stopwatch()..start();
   final Process process = await Process.start(
     executable,
     arguments,
