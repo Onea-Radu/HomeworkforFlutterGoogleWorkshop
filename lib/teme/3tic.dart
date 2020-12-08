@@ -126,7 +126,9 @@ class _HomePageState extends State<HomePage> {
       return true;
     }
 
-    return _squares.where((element) => element == Colors.white).isEmpty;
+    return _squares
+        .where((element) => element == Colors.white)
+        .isEmpty;
   }
 
   void changeCol(int ind) {
@@ -148,22 +150,21 @@ class _HomePageState extends State<HomePage> {
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(children: [
-          Expanded(
-            flex: 3,
-            child: GridView.builder(
-              itemCount: 9,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 3,
-              ),
-              itemBuilder: (context, index) => GestureDetector(
-                onTap: () {
-                  changeCol(index);
-                },
-                child: AnimatedButton(
-                  widgetColor: _squares[index],
-                ),
-              ),
+          GridView.builder(
+            shrinkWrap: true,
+            itemCount: 9,
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 3,
             ),
+            itemBuilder: (context, index) =>
+                GestureDetector(
+                  onTap: () {
+                    changeCol(index);
+                  },
+                  child: AnimatedButton(
+                    widgetColor: _squares[index],
+                  ),
+                ),
           ),
           if (_disabled)
             RaisedButton(
