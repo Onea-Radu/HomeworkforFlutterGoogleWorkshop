@@ -13,7 +13,7 @@ jobs:
       - name: Setup repository
         run: flutter pub get
       - name: Format code
-        run: flutter pub pub run --enable-asserts ci/bots/format.dart -n --set-exit-if-changed --line-length 140
+        run: flutter pub pub run --enable-asserts ci/bots/format.dart -n --set-exit-if-changed -- --line-length 140
 
   analyze:
     runs-on: ubuntu-latest
