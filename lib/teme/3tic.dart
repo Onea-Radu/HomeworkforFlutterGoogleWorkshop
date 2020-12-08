@@ -50,12 +50,12 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   Color _current = Colors.red;
   bool _disabled = false;
-  List<Color> _squares = List.generate(9, (index) => Colors.white);
+  List<Color> _squares = List.generate(9, (int index) => Colors.white);
 
   void reset() {
     _current = Colors.red;
     _disabled = false;
-    _squares = List.generate(9, (index) => Colors.white);
+    _squares = List.generate(9, (int index) => Colors.white);
     setState(() {});
   }
 
