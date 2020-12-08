@@ -49,7 +49,8 @@ class _HomePageState extends State<HomePage> {
         );
       else {
         await assetsAudioPlayer.open(
-          Audio.network('https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&q=${_propsGER[id ~/ 2]}&tl=de'),
+          Audio.network(
+              'https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&q=${_propsGER[id ~/ 2]}&tl=de'),
         );
       }
       // ignore: empty_catches
