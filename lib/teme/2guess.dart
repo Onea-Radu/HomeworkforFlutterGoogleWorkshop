@@ -86,9 +86,7 @@ class _HomePageState extends State<HomePage> {
                       });
                     },
                     keyboardType: TextInputType.number,
-                    inputFormatters: <TextInputFormatter>[
-                      FilteringTextInputFormatter.digitsOnly
-                    ],
+                    inputFormatters: <TextInputFormatter>[FilteringTextInputFormatter.digitsOnly],
                     decoration: InputDecoration(
                       errorText: _error,
                     ),
@@ -101,8 +99,7 @@ class _HomePageState extends State<HomePage> {
                           setState(() {
                             _error = 'You have not entered a number';
                           });
-                        } else if (int.parse(_text) > 100 ||
-                            int.parse(_text) < 1) {
+                        } else if (int.parse(_text) > 100 || int.parse(_text) < 1) {
                           setState(() {
                             _error = 'You have entered an invalid number.';
                           });
@@ -111,7 +108,8 @@ class _HomePageState extends State<HomePage> {
                           if (int.parse(_text) == _randomNumber) {
                             showDialog(
                                 context: context,
-                                builder: (_) => AlertDialog(
+                                builder: (_) =>
+                                    AlertDialog(
                                       title: Text('You were right.'),
                                       content: Text('It was $_randomNumber.'),
                                     )).then((_) {

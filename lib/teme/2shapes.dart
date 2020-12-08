@@ -80,8 +80,7 @@ class _HomePageState extends State<HomePage> {
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
-            Text(
-                'Please input a number to see if it is a square or triangular.'),
+            Text('Please input a number to see if it is a square or triangular.'),
             TextField(
               onChanged: (String str) {
                 setState(() {
@@ -89,9 +88,7 @@ class _HomePageState extends State<HomePage> {
                 });
               },
               keyboardType: TextInputType.number,
-              inputFormatters: <TextInputFormatter>[
-                FilteringTextInputFormatter.digitsOnly
-              ],
+              inputFormatters: <TextInputFormatter>[FilteringTextInputFormatter.digitsOnly],
               decoration: InputDecoration(
                 errorText: _error,
               ),

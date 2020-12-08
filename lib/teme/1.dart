@@ -46,10 +46,7 @@ class _HomePageState extends State<HomePage> {
                 });
               },
               keyboardType: TextInputType.numberWithOptions(decimal: true),
-              inputFormatters: [
-                FilteringTextInputFormatter(RegExp(r'(^\d*\.?\d*)'),
-                    allow: true)
-              ],
+              inputFormatters: [FilteringTextInputFormatter(RegExp(r'(^\d*\.?\d*)'), allow: true)],
               decoration: InputDecoration(
                 errorText: error,
                 hintText: 'enter the amount in EUR',

@@ -45,13 +45,11 @@ class _HomePageState extends State<HomePage> {
     try {
       if (id % 2 == 0)
         await assetsAudioPlayer.open(
-          Audio.network(
-              'https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&q=${_props[id]}&tl=ro'),
+          Audio.network('https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&q=${_props[id]}&tl=ro'),
         );
       else {
         await assetsAudioPlayer.open(
-          Audio.network(
-              'https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&q=${_propsGER[id ~/ 2]}&tl=de'),
+          Audio.network('https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&q=${_propsGER[id ~/ 2]}&tl=de'),
         );
       }
       // ignore: empty_catches
