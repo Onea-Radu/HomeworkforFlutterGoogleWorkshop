@@ -1,7 +1,3 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
-
 import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
@@ -187,13 +183,10 @@ Future<void> runCommand(String executable,
   }
 }
 
-/// Flattens a nested list of UTF-8 code units into a single string.
 String _flattenToString(List<List<int>> chunks) => utf8.decode(chunks.expand<int>((List<int> ints) => ints).toList());
 
-/// Specifies what to do with command output from [runCommand].
 enum OutputMode { print, capture, discard }
 
-/// Stores command output from [runCommand] when used with [OutputMode.capture].
 class CapturedOutput {
   String stdout;
   String stderr;
