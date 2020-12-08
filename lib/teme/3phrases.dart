@@ -23,7 +23,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List<String> _Props = <String>[
+  final List<String> _Props = <String>[
     'salut',
     'salut(Germană)',
     'mă numesc',
@@ -33,7 +33,7 @@ class _HomePageState extends State<HomePage> {
     'sunt bine',
     'sunt bine(Germană)',
   ];
-  List<String> _PropsGER = <String>[
+  final List<String> _PropsGER = <String>[
     'Hallo',
     'mein Name ist',
     'wie gehts',
@@ -51,10 +51,10 @@ class _HomePageState extends State<HomePage> {
       else {
         await assetsAudioPlayer.open(
           Audio.network(
-              'https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&q=${_PropsGER[id ~/
-                  2]}&tl=de'),
+              'https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&q=${_PropsGER[id ~/ 2]}&tl=de'),
         );
       }
+      // ignore: empty_catches
     } catch (t) {}
   }
 
