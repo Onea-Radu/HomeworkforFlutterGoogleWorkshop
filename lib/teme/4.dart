@@ -36,7 +36,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   Future<void> getNextPage() async {
-    http.Response h = await http.get('https://yts.mx/api/v2/list_movies.json?page=$_page&genre=$_genre');
+    final http.Response h = await http.get('https://yts.mx/api/v2/list_movies.json?page=$_page&genre=$_genre');
     final Map<String, dynamic> j = jsonDecode(h.body);
     final List<dynamic> y = j['data']['movies'].map((e) => e['title']).toList();
     final List<String> t = y.cast<String>();
